@@ -1,5 +1,5 @@
 # 采用JeeSite 企业信息管理系统基础框架
-DDDDDDDDDDDDDDDDDDDDDD1
+
 ## 技术选型
 
 1、Services相关
