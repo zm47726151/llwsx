@@ -47,7 +47,7 @@ public class Generate {
 		
 		String moduleName = "wexin";			// 模块名，例：sys
 		String subModuleName = "";				// 子模块名（可选） 
-		String className = "ResponseVoiceMessage";			// 类名，例：user
+		String className = "Music";			// 类名，例：user
 		String classAuthor = "zm47726151@gmail.com";		// 类作者，例：ThinkGem
 		String functionName = "发送图片消息";			// 功能名，例：用户
 

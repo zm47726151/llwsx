@@ -6,7 +6,7 @@
 //import org.springframework.stereotype.Repository;
 //
 //import com.thinkgem.jeesite.common.persistence.BaseDao;
-//import com.thinkgem.jeesite.modules.wexin.entity.RequestVideoMessage;
+//import com.thinkgem.jeesite.modules.wexin.entity.WeXinArticle;
 //
 ///**
 // * 发送图片消息DAO接口
@@ -14,6 +14,6 @@
 // * @version 2014-11-09
 // */
 //@Repository
-//public class RequestVideoMessageDao extends BaseDao<RequestVideoMessage> {
+//public class WeXinArticleDao extends BaseDao<WeXinArticle> {
 //	
 //}

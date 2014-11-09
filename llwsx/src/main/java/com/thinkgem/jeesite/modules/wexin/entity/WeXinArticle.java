@@ -8,9 +8,9 @@
 //
 //import org.hibernate.annotations.Cache;
 //import org.hibernate.annotations.CacheConcurrencyStrategy;
+//import org.hibernate.validator.constraints.Length;
 //
 //import com.thinkgem.jeesite.common.persistence.IdEntity;
-//import com.thinkgem.jeesite.modules.sys.entity.User;
 //
 ///**
 // * 发送图片消息Entity
@@ -19,29 +19,30 @@
 // * @version 2014-11-09
 // */
 //@Entity
-//@Table(name = "wexin_responseMusicMessage")
+//@Table(name = "wexin_article")
 //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-//public class ResponseMusicMessage extends IdEntity<User> {
+//public class WeXinArticle extends IdEntity<WeXinArticle> {
 //
 //	private static final long serialVersionUID = 1L;
-//	// 音乐名称
+//	// 图文消息名称
 //	private String Title;
-//	// 音乐描述
+//	// 图文消息描述
 //	private String Description;
-//	// 音乐链接
-//	private String MusicUrl;
-//	// 高质量音乐链接，WIFI环境优先使用该链接播放音乐
-//	private String HQMusicUrl;
+//	// 图片链接，支持JPG、PNG格式，较好的效果为大图640*320，小图80*80，限制图片链接的域名需要与开发者填写的基本资料中的Url一致
+//	private String PicUrl;
+//	// 点击图文消息跳转链接
+//	private String Url;
 //
-//	public ResponseMusicMessage() {
+//	public WeXinArticle() {
 //		super();
 //	}
 //
-//	public ResponseMusicMessage(String id) {
+//	public WeXinArticle(String id) {
 //		this();
 //		this.id = id;
 //	}
 //
+//	@Length(min = 1, max = 200)
 //	public String getTitle() {
 //		return Title;
 //	}
@@ -50,28 +51,31 @@
 //		Title = title;
 //	}
 //
+//	@Length(min = 1, max = 200)
 //	public String getDescription() {
-//		return Description;
+//		return null == Description ? "" : Description;
 //	}
 //
 //	public void setDescription(String description) {
 //		Description = description;
 //	}
 //
-//	public String getMusicUrl() {
-//		return MusicUrl;
+//	@Length(min = 1, max = 200)
+//	public String getPicUrl() {
+//		return null == PicUrl ? "" : PicUrl;
 //	}
 //
-//	public void setMusicUrl(String musicUrl) {
-//		MusicUrl = musicUrl;
+//	public void setPicUrl(String picUrl) {
+//		PicUrl = picUrl;
 //	}
 //
-//	public String getHQMusicUrl() {
-//		return HQMusicUrl;
+//	public String getUrl() {
+//		return null == Url ? "" : Url;
 //	}
 //
-//	public void setHQMusicUrl(String hQMusicUrl) {
-//		HQMusicUrl = hQMusicUrl;
+//	@Length(min = 1, max = 200)
+//	public void setUrl(String url) {
+//		Url = url;
 //	}
 //
 //}

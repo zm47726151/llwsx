@@ -36,7 +36,7 @@ public class ${ClassName} extends IdEntity<${ClassName}> {
 	}
 	 
 	@Length(min=1, max=200)
-	public String getId() {
+	public String getName() {
 		return name;
 	}
 

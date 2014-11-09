@@ -8,9 +8,9 @@
 //
 //import org.hibernate.annotations.Cache;
 //import org.hibernate.annotations.CacheConcurrencyStrategy;
+//import org.hibernate.validator.constraints.Length;
 //
 //import com.thinkgem.jeesite.common.persistence.IdEntity;
-//import com.thinkgem.jeesite.modules.sys.entity.User;
 //
 ///**
 // * 发送图片消息Entity
@@ -19,9 +19,9 @@
 // * @version 2014-11-09
 // */
 //@Entity
-//@Table(name = "wexin_responseMusicMessage")
+//@Table(name = "wexin_music")
 //@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-//public class ResponseMusicMessage extends IdEntity<User> {
+//public class WeXinMusic extends IdEntity<WeXinMusic> {
 //
 //	private static final long serialVersionUID = 1L;
 //	// 音乐名称
@@ -33,15 +33,16 @@
 //	// 高质量音乐链接，WIFI环境优先使用该链接播放音乐
 //	private String HQMusicUrl;
 //
-//	public ResponseMusicMessage() {
+//	public WeXinMusic() {
 //		super();
 //	}
 //
-//	public ResponseMusicMessage(String id) {
+//	public WeXinMusic(String id) {
 //		this();
 //		this.id = id;
 //	}
 //
+//	@Length(min = 1, max = 200)
 //	public String getTitle() {
 //		return Title;
 //	}
@@ -50,6 +51,7 @@
 //		Title = title;
 //	}
 //
+//	@Length(min = 1, max = 200)
 //	public String getDescription() {
 //		return Description;
 //	}
@@ -58,6 +60,7 @@
 //		Description = description;
 //	}
 //
+//	@Length(min = 1, max = 200)
 //	public String getMusicUrl() {
 //		return MusicUrl;
 //	}
@@ -66,12 +69,13 @@
 //		MusicUrl = musicUrl;
 //	}
 //
+//	@Length(min = 1, max = 200)
 //	public String getHQMusicUrl() {
 //		return HQMusicUrl;
 //	}
 //
-//	public void setHQMusicUrl(String hQMusicUrl) {
-//		HQMusicUrl = hQMusicUrl;
+//	public void setHQMusicUrl(String musicUrl) {
+//		HQMusicUrl = musicUrl;
 //	}
 //
 //}

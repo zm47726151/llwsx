@@ -13,8 +13,8 @@
 //import com.thinkgem.jeesite.common.persistence.Page;
 //import com.thinkgem.jeesite.common.service.BaseService;
 //import com.thinkgem.jeesite.common.utils.StringUtils;
-//import com.thinkgem.jeesite.modules.wexin.entity.RequestVoiceMessage;
-//import com.thinkgem.jeesite.modules.wexin.dao.RequestVoiceMessageDao;
+//import com.thinkgem.jeesite.modules.wexin.dao.WeXinArticleDao;
+//import com.thinkgem.jeesite.modules.wexin.entity.WeXinArticle;
 //
 ///**
 // * 发送图片消息Service
@@ -23,33 +23,33 @@
 // */
 //@Component
 //@Transactional(readOnly = true)
-//public class RequestVoiceMessageService extends BaseService {
+//public class WeXinArticleService extends BaseService {
 //
 //	@Autowired
-//	private RequestVoiceMessageDao requestVoiceMessageDao;
+//	private WeXinArticleDao weXinArticleDao;
 //	
-//	public RequestVoiceMessage get(String id) {
-//		return requestVoiceMessageDao.get(id);
+//	public WeXinArticle get(String id) {
+//		return weXinArticleDao.get(id);
 //	}
 //	
-//	public Page<RequestVoiceMessage> find(Page<RequestVoiceMessage> page, RequestVoiceMessage requestVoiceMessage) {
-//		DetachedCriteria dc = requestVoiceMessageDao.createDetachedCriteria();
-//		if (StringUtils.isNotEmpty(requestVoiceMessage.getId())){
-//			dc.add(Restrictions.like("name", "%"+requestVoiceMessage.getId()+"%"));
+//	public Page<WeXinArticle> find(Page<WeXinArticle> page, WeXinArticle weXinArticle) {
+//		DetachedCriteria dc = weXinArticleDao.createDetachedCriteria();
+//		if (StringUtils.isNotEmpty(weXinArticle.getId())){
+//			dc.add(Restrictions.like("name", "%"+weXinArticle.getId()+"%"));
 //		}
-//		dc.add(Restrictions.eq(RequestVoiceMessage.FIELD_DEL_FLAG, RequestVoiceMessage.DEL_FLAG_NORMAL));
+//		dc.add(Restrictions.eq(WeXinArticle.FIELD_DEL_FLAG, WeXinArticle.DEL_FLAG_NORMAL));
 //		dc.addOrder(Order.desc("id"));
-//		return requestVoiceMessageDao.find(page, dc);
+//		return weXinArticleDao.find(page, dc);
 //	}
 //	
 //	@Transactional(readOnly = false)
-//	public void save(RequestVoiceMessage requestVoiceMessage) {
-//		requestVoiceMessageDao.save(requestVoiceMessage);
+//	public void save(WeXinArticle article) {
+//		weXinArticleDao.save(article);
 //	}
 //	
 //	@Transactional(readOnly = false)
 //	public void delete(String id) {
-//		requestVoiceMessageDao.deleteById(id);
+//		weXinArticleDao.deleteById(id);
 //	}
 //	
 //}
