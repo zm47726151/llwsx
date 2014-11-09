@@ -34,8 +34,8 @@ public class ${ClassName}Service extends BaseService {
 	
 	public Page<${ClassName}> find(Page<${ClassName}> page, ${ClassName} ${className}) {
 		DetachedCriteria dc = ${className}Dao.createDetachedCriteria();
-		if (StringUtils.isNotEmpty(${className}.getName())){
-			dc.add(Restrictions.like("name", "%"+${className}.getName()+"%"));
+		if (StringUtils.isNotEmpty(${className}.getId())){
+			dc.add(Restrictions.like("name", "%"+${className}.getId()+"%"));
 		}
 		dc.add(Restrictions.eq(${ClassName}.FIELD_DEL_FLAG, ${ClassName}.DEL_FLAG_NORMAL));
 		dc.addOrder(Order.desc("id"));

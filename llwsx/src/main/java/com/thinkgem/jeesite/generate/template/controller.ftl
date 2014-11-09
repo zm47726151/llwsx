@@ -71,7 +71,7 @@ public class ${ClassName}Controller extends BaseController {
 			return form(${className}, model);
 		}
 		${className}Service.save(${className});
-		addMessage(redirectAttributes, "保存${functionName}'" + ${className}.getName() + "'成功");
+		addMessage(redirectAttributes, "保存${functionName}'" + ${className}.getId() + "'成功");
 		return "redirect:"+Global.getAdminPath()+"/${viewPrefix}/?repage";
 	}
 	

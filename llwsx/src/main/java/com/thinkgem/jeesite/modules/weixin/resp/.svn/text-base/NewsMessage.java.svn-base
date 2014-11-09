@@ -1,0 +1,37 @@
+/*
+* 文 件 名:  NewsMessage.java
+* 版    权: 北京华通天达科技有限公司 Copyright,  All rights reserved
+* 修 改 人:  wangjinguang
+* 修改时间:  2013-12-19
+*/
+package com.wang.wx.resp;
+
+import java.util.List;
+
+/**
+ *
+ * @author  wangjinguang
+ * @version  [1.0, 2013-12-19]
+ */
+public class NewsMessage extends BaseMessage { 
+    // 图文消息个数，限制为10条以内 
+    private int ArticleCount; 
+    // 多条图文消息信息，默认第一个item为大图 
+    private List<Article> Articles; 
+ 
+    public int getArticleCount() { 
+        return ArticleCount; 
+    } 
+ 
+    public void setArticleCount(int articleCount) { 
+        ArticleCount = articleCount; 
+    } 
+ 
+    public List<Article> getArticles() { 
+        return Articles; 
+    } 
+ 
+    public void setArticles(List<Article> articles) { 
+        Articles = articles; 
+    } 
+} 

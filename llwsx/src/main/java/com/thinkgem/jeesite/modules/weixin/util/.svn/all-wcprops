@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/165/trunk/weixingongzhun/src/com/wang/wx/util
+END
+MessageUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/165/trunk/weixingongzhun/src/com/wang/wx/util/MessageUtil.java
+END
+MyX509TrustManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/165/trunk/weixingongzhun/src/com/wang/wx/util/MyX509TrustManager.java
+END
+WeixinUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/165/trunk/weixingongzhun/src/com/wang/wx/util/WeixinUtil.java
+END

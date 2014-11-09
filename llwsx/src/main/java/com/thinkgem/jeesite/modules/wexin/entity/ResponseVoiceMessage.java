@@ -1,7 +1,7 @@
 /**
  * There are <a href="https://github.com/thinkgem/jeesite">JeeSite</a> code generation
  */
-package ${packageName}.${moduleName}.entity${subModuleName};
+package com.thinkgem.jeesite.modules.wexin.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -13,24 +13,24 @@ import org.hibernate.validator.constraints.Length;
 import com.thinkgem.jeesite.common.persistence.IdEntity;
 
 /**
- * ${functionName}Entity
- * @author ${classAuthor}
- * @version ${classVersion}
+ * 发送图片消息Entity
+ * @author zm47726151@gmail.com
+ * @version 2014-11-09
  */
 @Entity
-@Table(name = "${tableName}")
+@Table(name = "wexin_responseVoiceMessage")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class ${ClassName} extends IdEntity<${ClassName}> {
+public class ResponseVoiceMessage extends IdEntity<ResponseVoiceMessage> {
 	
 	private static final long serialVersionUID = 1L;
 	private String id; 		// 编号
 	private String name; 	// 名称
 
-	public ${ClassName}() {
+	public ResponseVoiceMessage() {
 		super();
 	}
 
-	public ${ClassName}(String id){
+	public ResponseVoiceMessage(String id){
 		this();
 		this.id = id;
 	}
