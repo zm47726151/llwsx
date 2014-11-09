@@ -81,6 +81,8 @@ public class LeaveService extends BaseService {
 		dc.add(Restrictions.ne("processStatus","已完成"));
 		dc.add(Restrictions.eq("delFlag", Leave.DEL_FLAG_NORMAL));
 		dc.createAlias("createBy", "createBy");
+//		dc.createAlias("createBy.office", "office");
+//		dc.add(dataScopeFilter(UserUtils.getUser(), "office", "createBy"));
 		dc.addOrder(Order.desc("id"));
 		List<Leave> list = leaveDao.find(dc);
 		List<Leave> result = Lists.newArrayList();
@@ -122,6 +124,8 @@ public class LeaveService extends BaseService {
 		}
 		dc.add(Restrictions.eq("delFlag", Leave.DEL_FLAG_NORMAL));
 		dc.createAlias("createBy", "createBy");
+//		dc.createAlias("createBy.office", "office");
+//		dc.add(dataScopeFilter(UserUtils.getUser(), "office", "createBy"));
 		dc.addOrder(Order.desc("id"));
 	    return leaveDao.find(page, dc);
 	}
