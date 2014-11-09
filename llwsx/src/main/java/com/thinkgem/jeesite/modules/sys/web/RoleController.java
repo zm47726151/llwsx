@@ -21,10 +21,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.thinkgem.jeesite.common.config.Global;
 import com.thinkgem.jeesite.common.utils.StringUtils;
 import com.thinkgem.jeesite.common.web.BaseController;
-//import com.thinkgem.jeesite.modules.sys.entity.Office;
 import com.thinkgem.jeesite.modules.sys.entity.Role;
 import com.thinkgem.jeesite.modules.sys.entity.User;
-//import com.thinkgem.jeesite.modules.sys.service.OfficeService;
 import com.thinkgem.jeesite.modules.sys.service.SystemService;
 import com.thinkgem.jeesite.modules.sys.utils.UserUtils;
 
@@ -60,13 +58,8 @@ public class RoleController extends BaseController {
 	@RequiresPermissions("sys:role:view")
 	@RequestMapping(value = "form")
 	public String form(Role role, Model model) {
-//		if (role.getOffice()==null){
-//			role.setOffice(UserUtils.getUser().getOffice());
-//		}
 		model.addAttribute("role", role);
 		model.addAttribute("menuList", systemService.findAllMenu());
-//		model.addAttribute("categoryList", categoryService.findByUser(false, null));
-//		model.addAttribute("officeList", officeService.findAll());
 		return "modules/sys/roleForm";
 	}
 	
@@ -120,27 +113,8 @@ public class RoleController extends BaseController {
 	public String selectUserToRole(Role role, Model model) {
 		model.addAttribute("role", role);
 		model.addAttribute("selectIds", role.getUserIds());
-//		model.addAttribute("officeList", officeService.findAll());
 		return "modules/sys/selectUserToRole";
 	}
-	
-//	@RequiresPermissions("sys:role:view")
-//	@ResponseBody
-//	@RequestMapping(value = "users")
-//	public List<Map<String, Object>> users(String officeId, HttpServletResponse response) {
-//		response.setContentType("application/json; charset=UTF-8");
-//		List<Map<String, Object>> mapList = Lists.newArrayList();
-//		Office office = officeService.get(officeId);
-//		List<User> userList = office.getUserList();
-//		for (User user : userList) {
-//			Map<String, Object> map = Maps.newHashMap();
-//			map.put("id", user.getId());
-//			map.put("pId", 0);
-//			map.put("name", user.getName());
-//			mapList.add(map);			
-//		}
-//		return mapList;
-//	}
 	
 	@RequiresPermissions("sys:role:edit")
 	@RequestMapping(value = "outrole")

@@ -82,10 +82,10 @@ public class LinkService extends BaseService {
 		if (link.getCreateBy()!=null && StringUtils.isNotBlank(link.getCreateBy().getId())){
 			dc.add(Restrictions.eq("createBy.id", link.getCreateBy().getId()));
 		}
-		if (isDataScopeFilter){
-			dc.createAlias("category.office", "categoryOffice").createAlias("createBy", "createBy");
-			dc.add(dataScopeFilter(UserUtils.getUser(), "categoryOffice", "createBy"));
-		}
+//		if (isDataScopeFilter){
+//			dc.createAlias("category.office", "categoryOffice").createAlias("createBy", "createBy");
+//			dc.add(dataScopeFilter(UserUtils.getUser(), "categoryOffice", "createBy"));
+//		}
 		dc.add(Restrictions.eq(Link.FIELD_DEL_FLAG, link.getDelFlag()));
 		dc.addOrder(Order.desc("weight"));
 		dc.addOrder(Order.desc("updateDate"));

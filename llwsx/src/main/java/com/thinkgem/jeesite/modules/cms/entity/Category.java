@@ -34,7 +34,6 @@ import org.hibernate.validator.constraints.Length;
 
 import com.google.common.collect.Lists;
 import com.thinkgem.jeesite.common.persistence.IdEntity;
-//import com.thinkgem.jeesite.modules.sys.entity.Office;
 
 /**
  * 栏目Entity
@@ -51,7 +50,6 @@ public class Category extends IdEntity<Category> {
 
 	private static final long serialVersionUID = 1L;
 	private Site site;		// 归属站点
-//	private Office office;	// 归属部门
 	private Category parent;// 父级菜单
 	private String parentIds;// 所有父级编号
 	private String module; 	// 栏目模型（article：文章；picture：图片；download：下载；link：链接；special：专题）
@@ -106,17 +104,6 @@ public class Category extends IdEntity<Category> {
 	public void setSite(Site site) {
 		this.site = site;
 	}
-	
-//	@ManyToOne
-//	@JoinColumn(name="office_id")
-//	@NotFound(action = NotFoundAction.IGNORE)
-//	public Office getOffice() {
-//		return office;
-//	}
-//
-//	public void setOffice(Office office) {
-//		this.office = office;
-//	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="parent_id")

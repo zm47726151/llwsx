@@ -66,7 +66,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 			}
 		}
 
-		User user = getSystemService().getUserByLoginName(token.getUsername());
+		User user = getSystemService().getUserByMobile(token.getUsername());
 		if (user != null) {
 			byte[] salt = Encodes.decodeHex(user.getPassword().substring(0,16));
 			return new SimpleAuthenticationInfo(new Principal(user), 
@@ -82,7 +82,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 		Principal principal = (Principal) getAvailablePrincipal(principals);
-		User user = getSystemService().getUserByLoginName(principal.getLoginName());
+		User user = getSystemService().getUserByMobile(principal.getMobile());
 		if (user != null) {
 			UserUtils.putCache("user", user);
 			SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
@@ -151,13 +151,13 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 		private static final long serialVersionUID = 1L;
 		
 		private String id;
-		private String loginName;
+		private String mobile;
 		private String name;
 		private Map<String, Object> cacheMap;
 
 		public Principal(User user) {
 			this.id = user.getId();
-			this.loginName = user.getLoginName();
+			this.mobile = user.getMobile();
 			this.name = user.getName();
 		}
 
@@ -165,8 +165,8 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 			return id;
 		}
 
-		public String getLoginName() {
-			return loginName;
+		public String getMobile() {
+			return mobile;
 		}
 
 		public String getName() {

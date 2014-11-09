@@ -34,12 +34,10 @@
 	</form:form>
 	<tags:message content="${message}"/>
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
-		<thead><tr><th>所在公司</th><th>所在部门</th><th>操作用户</th><th>URI</th><th>提交方式</th><th>操作者IP</th><th>创建时间</th></thead>
+		<thead><tr><th>操作用户</th><th>URI</th><th>提交方式</th><th>操作者IP</th><th>创建时间</th></thead>
 		<tbody>
 		<c:forEach items="${page.list}" var="log">
 			<tr>
-				<td>${log.createBy.company.name}</td>
-				<td>${log.createBy.office.name}</td>
 				<td>${log.createBy.name}</td>
 				<td><strong>${log.requestUri}</strong></td>
 				<td>${log.method}</td>

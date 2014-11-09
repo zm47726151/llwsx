@@ -33,13 +33,7 @@
 	<form:form id="inputForm" modelAttribute="category" action="${ctx}/cms/category/save" method="post" class="form-horizontal">
 		<form:hidden path="id"/>
 		<tags:message content="${message}"/>
-		<div class="control-group">
-			<label class="control-label">归属机构:</label>
-			<div class="controls">
-                <tags:treeselect id="office" name="office.id" value="${category.office.id}" labelName="office.name" labelValue="${category.office.name}"
-					title="机构" url="/sys/office/treeData" cssClass="required"/>
-			</div>
-		</div>
+
 		<div class="control-group">
 			<label class="control-label">上级栏目:</label>
 			<div class="controls">

@@ -4,7 +4,7 @@
 * 修 改 人:  wangjinguang
 * 修改时间:  2013-12-19
 */
-package com.thinkgem.jeesite.modules.wexin;
+package com.thinkgem.jeesite.modules.wexin.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,23 +14,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.thinkgem.jeesite.modules.wexin.service.CoreService;
 import com.thinkgem.jeesite.modules.wexin.util.SignUtil;
 
 
 
-/**
- *
- * @author  wangjinguang
- * @version  [1.0, 2013-12-19]
- */
-public class CoreServlet extends HttpServlet { 
+@Controller
+public class WeXinCoreController extends HttpServlet { 
     private static final long serialVersionUID = 4440739483644821986L; 
  
     /** 
      * 确认请求来自微信服务器 
      */ 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
+    @RequestMapping(value = "${adminPath}/core", method = RequestMethod.GET)
+    public void weXinCoreGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
         // 微信加密签名 
         String signature = request.getParameter("signature"); 
         // 时间戳 
@@ -52,7 +53,8 @@ public class CoreServlet extends HttpServlet {
     /** 
      * 处理微信服务器发来的消息 
      */ 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
+    @RequestMapping(value = "${adminPath}/core", method = RequestMethod.POST)
+    public void weXinCorePost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
         // 将请求、响应的编码均设置为UTF-8（防止中文乱码） 
         request.setCharacterEncoding("UTF-8"); 
         response.setCharacterEncoding("UTF-8"); 

@@ -22,7 +22,7 @@
 					validateCode: {remote: "${pageContext.request.contextPath}/servlet/validateCodeServlet"}
 				},
 				messages: {
-					username: {required: "请填写用户名."},password: {required: "请填写密码."},
+					username: {required: "请填写手机号"},password: {required: "请填写密码."},
 					validateCode: {remote: "验证码不正确.", required: "请填写验证码."}
 				},
 				errorLabelContainer: "#messageBox",
@@ -63,7 +63,7 @@
                 <div class="body">
 					<div class="control-group">
 						<div class="controls">
-							<input type="text" id="username" name="username" class="required" value="${username}" placeholder="登录名">
+							<input type="text" id="username" name="username" class="required" value="${mobile}" placeholder="登录名">
 						</div>
 					</div>
 					

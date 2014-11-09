@@ -229,7 +229,7 @@ public class UserController extends BaseController {
 		if (loginName != null && loginName.equals(oldLoginName)) {
 			return "true";
 		} else if (loginName != null
-				&& systemService.getUserByLoginName(loginName) == null) {
+				&& systemService.getUserByMobile(loginName) == null) {
 			return "true";
 		}
 		return "false";

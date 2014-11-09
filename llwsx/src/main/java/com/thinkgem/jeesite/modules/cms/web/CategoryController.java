@@ -76,14 +76,10 @@ public class CategoryController extends BaseController {
 			category.setParent(new Category("1"));
 		}
 		category.setParent(categoryService.get(category.getParent().getId()));
-//		if (category.getOffice()==null||category.getOffice().getId()==null){
-//			category.setOffice(category.getParent().getOffice());
-//		}
         model.addAttribute("listViewList",getTplContent(Category.DEFAULT_TEMPLATE));
         model.addAttribute("category_DEFAULT_TEMPLATE",Category.DEFAULT_TEMPLATE);
         model.addAttribute("contentViewList",getTplContent(Article.DEFAULT_TEMPLATE));
         model.addAttribute("article_DEFAULT_TEMPLATE",Article.DEFAULT_TEMPLATE);
-//		model.addAttribute("office", category.getOffice());
 		model.addAttribute("category", category);
 		return "modules/cms/categoryForm";
 	}

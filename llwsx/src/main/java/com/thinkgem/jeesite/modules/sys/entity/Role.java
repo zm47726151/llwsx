@@ -49,10 +49,6 @@ public class Role extends IdEntity<Role> {
 	private List<User> userList = Lists.newArrayList(); // 拥有用户列表
 	private List<Menu> menuList = Lists.newArrayList(); // 拥有菜单列表
 	public static final String DATA_SCOPE_ALL = "1";
-//	public static final String DATA_SCOPE_COMPANY_AND_CHILD = "2";
-//	public static final String DATA_SCOPE_COMPANY = "3";
-//	public static final String DATA_SCOPE_OFFICE_AND_CHILD = "4";
-//	public static final String DATA_SCOPE_OFFICE = "5";
 	public static final String DATA_SCOPE_SELF = "8";
 	public static final String DATA_SCOPE_CUSTOM = "9";
 	
