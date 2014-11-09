@@ -93,10 +93,10 @@ public class ArticleService extends BaseService {
 		if (article.getCreateBy()!=null && StringUtils.isNotBlank(article.getCreateBy().getId())){
 			dc.add(Restrictions.eq("createBy.id", article.getCreateBy().getId()));
 		}
-		if (isDataScopeFilter){
-			dc.createAlias("category.office", "categoryOffice").createAlias("createBy", "createBy");
-			dc.add(dataScopeFilter(UserUtils.getUser(), "categoryOffice", "createBy"));
-		}
+//		if (isDataScopeFilter){
+//			dc.createAlias("category.office", "categoryOffice").createAlias("createBy", "createBy");
+//			dc.add(dataScopeFilter(UserUtils.getUser(), "categoryOffice", "createBy"));
+//		}
 		dc.add(Restrictions.eq(Article.FIELD_DEL_FLAG, article.getDelFlag()));
 		if (StringUtils.isBlank(page.getOrderBy())){
 			dc.addOrder(Order.desc("weight"));

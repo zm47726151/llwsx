@@ -53,8 +53,8 @@ public class CategoryService extends BaseService {
 		if (list == null){
 			User user = UserUtils.getUser();
 			DetachedCriteria dc = categoryDao.createDetachedCriteria();
-			dc.createAlias("office", "office").createAlias("createBy", "user");
-			dc.add(dataScopeFilter(user, "office", "user"));
+//			dc.createAlias("office", "office").createAlias("createBy", "user");
+//			dc.add(dataScopeFilter(user, "office", "user"));
 //			dc.add(Restrictions.or(Restrictions.isNull("href"),Restrictions.eq("href", "")));
 			dc.add(Restrictions.eq("delFlag", Category.DEL_FLAG_NORMAL));
 			dc.addOrder(Order.asc("site.id")).addOrder(Order.asc("sort"));
