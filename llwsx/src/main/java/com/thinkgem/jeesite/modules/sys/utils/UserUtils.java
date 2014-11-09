@@ -14,7 +14,6 @@ import org.apache.shiro.UnavailableSecurityManagerException;
 import org.apache.shiro.session.InvalidSessionException;
 import org.apache.shiro.subject.Subject;
 import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.sql.JoinType;
 

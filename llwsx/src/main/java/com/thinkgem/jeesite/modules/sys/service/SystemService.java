@@ -14,7 +14,6 @@ import org.activiti.engine.identity.Group;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.shiro.SecurityUtils;
 import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
